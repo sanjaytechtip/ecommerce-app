@@ -15,10 +15,10 @@ import mongoose from "mongoose";
 import colors from "colors";
 const connectDB = async () => {
   try {
-    let dbpassword = encodeURIComponent('AntyaFMS@2019');
-    const dbo = 'shoyeb_test';
+    let dbpassword = encodeURIComponent('xxxxxxxx');
+    const dbo = 'xxxx_xxx';
     let authMechanism = 'DEFAULT';
-    const conn = await mongoose.connect(`mongodb://AntyaFMS:${dbpassword}@dev-demo.info:27017/${dbo}?connectTimeoutMS=1000&authSource=admin`);
+    const conn = await mongoose.connect(`mongodb connection string`);
     console.log(
       `Conneted To Mongodb Databse ${conn.connection.host}`.bgMagenta.white
     );
