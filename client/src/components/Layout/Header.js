@@ -5,7 +5,7 @@ import { authContext } from "../../context/auth";
 
 const Header = () => {
   const { setAuthData, auth } = useContext(authContext);
-
+  //console.log(auth.data.user.name);
   const handleLogout = () => {
     setAuthData(null);
   };
@@ -63,6 +63,11 @@ const Header = () => {
                 Cart(0)
               </NavLink>
             </li>
+            {!auth.data ? (
+              ""
+            ) : (
+              <li className="nav-item">{auth.data.user.name}</li>
+            )}
           </ul>
         </div>
       </div>
