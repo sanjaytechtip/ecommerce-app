@@ -2,12 +2,17 @@ import React, { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { GiShoppingBag } from "react-icons/gi";
 import { authContext } from "../../context/auth";
+import toast from "react-hot-toast";
 
 const Header = () => {
+  //const navigate = useNavigate();
   const { setAuthData, auth } = useContext(authContext);
   //console.log(auth.data.user.name);
   const handleLogout = () => {
     setAuthData(null);
+    //navigate("/login");
+    toast.success("Logout Successfully.");
+    //console.log('dfgdfg')
   };
 
   //console.log(auth);
@@ -52,7 +57,7 @@ const Header = () => {
             ) : (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" onClick={handleLogout}>
+                  <Link className="nav-link" to="/login" onClick={handleLogout}>
                     Logout
                   </Link>
                 </li>

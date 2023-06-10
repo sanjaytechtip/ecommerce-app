@@ -7,7 +7,8 @@ import "../../style/AuthStyle.css";
 import { authContext } from "../../context/auth";
 
 const Login = () => {
-  const { setAuthData } = useContext(authContext);
+  const { setAuthData, auth } = useContext(authContext);
+  
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState(false);
   const [emailErrMsg, setEmailErrMsg] = useState("");
@@ -15,7 +16,9 @@ const Login = () => {
   const [passwordErr, setPasswordErr] = useState(false);
   const [passwordErrMsg, setPasswordErrMsg] = useState("");
   const navigate = useNavigate();
-
+  if(auth.data){
+    navigate("/"); 
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
 
